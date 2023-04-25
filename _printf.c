@@ -99,10 +99,11 @@ int (*get_fmt_fn(char s))(va_list)
 		{'%', print_perc},
 		{'d', print_dec},
 		{'i', print_int},
+		{'b', print_binary},
 	};
 	int i = 0;
 
-	while (s != ops[i].s && i < 5)
+	while (s != ops[i].s && i < 6)
 		i++;
 
 	if (s == ops[i].s)
