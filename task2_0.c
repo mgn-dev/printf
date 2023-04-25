@@ -10,8 +10,9 @@
 int print_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
+	unsigned int j = num;
 	char *str = NULL;
-	int i, j = num, len = 0, count = 0;
+	int i, len, count = 0;
 
 	if (num == 0)
 	{
@@ -20,7 +21,7 @@ int print_binary(va_list args)
 	}
 
 	for (len = 0; j > 0; len++)
-		j = j / 2;
+		j /= 2;
 
 	str = malloc(sizeof(char) * (len + 1));
 
