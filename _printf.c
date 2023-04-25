@@ -24,7 +24,11 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			count += handle_specifier(format, args, i);
-			i++;
+
+            if (count == 0)
+                count += handle_char('%');
+            else
+			    i++;
 		}
 		else
 		{
@@ -57,6 +61,10 @@ int handle_specifier(const char *format, va_list args, int index)
 	{
 		count = fn_ptr(args);
 	}
+    else
+    {
+
+    }
 
 	return (count);
 }
