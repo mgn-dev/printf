@@ -103,6 +103,7 @@ int (*get_fmt_fn(char s))(va_list)
 		{'u', print_unsigned},
 		{'o', print_oct},
 		{'x', print_hex},
+		{'X', print_HEX},
 	};
 	int i = 0;
 
