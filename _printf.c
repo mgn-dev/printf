@@ -109,7 +109,7 @@ int (*get_fmt_fn(char s))(va_list)
 	};
 	int i = 0;
 
-	while (s != ops[i].s && i < 10)
+	while (s != ops[i].s && i < 12)
 		i++;
 
 	if (s == ops[i].s)
