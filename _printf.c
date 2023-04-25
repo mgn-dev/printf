@@ -11,7 +11,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int count = 0, i;
+	int count = 0, result = 0, i;
 	va_list args;
 
 	if (format == NULL)
@@ -23,15 +23,18 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (result == 0) /*next char is unknown*/
+			result = handle_specifier(format, args, i);
+
+			if (result == 0)
 			{
 				if (format[i + 1] == '\0')
 					count = -1;
-                else
-                    count += handle_char('%');
+				else
+					count += handle_char('%');
 			}
 			else
-			{	count += result;
+			{
+				count += result;
 				i++;
 			}
 		}
@@ -63,13 +66,7 @@ int handle_specifier(const char *format, va_list args, int index)
 	fn_ptr = get_fmt_fn(format[index + 1]);
 
 	if (fn_ptr != NULL)
-	{
 		count = fn_ptr(args);
-	}
-    else
-    {
-
-    }
 
 	return (count);
 }
