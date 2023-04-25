@@ -100,6 +100,7 @@ int (*get_fmt_fn(char s))(va_list)
 		{'d', print_dec},
 		{'i', print_int},
 		{'b', print_binary},
+		{'u', print_unsigned},
 	};
 	int i = 0;
 
