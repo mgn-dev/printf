@@ -101,6 +101,7 @@ int (*get_fmt_fn(char s))(va_list)
 		{'i', print_int},
 		{'b', print_binary},
 		{'u', print_unsigned},
+		{'o', print_oct},
 	};
 	int i = 0;
 
