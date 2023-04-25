@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stddef.h>
+#include <stdio.h>
 
 /**
  * _printf - function that produces output according to a format.
@@ -25,7 +26,7 @@ int _printf(const char *format, ...)
 		{
 			result = handle_specifier(format, args, i);
 
-			if (result == 0)
+			if (result == 0 && format[i + 1] != 's')
 			{
 				if (format[i + 1] == '\0')
 					count = -1;
