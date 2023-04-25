@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * print_hex_aux - prints an hexgecimal number.
+ * print_hex_bis - prints an hexgecimal number.
  * @num: arguments.
  * Return: counter.
  */

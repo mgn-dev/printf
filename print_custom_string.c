@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * printf_custom_string - print custom  string.
+ * print_custom_string - print custom  string.
  * @args: arguments.
  * Return: the length of the string.
  */
