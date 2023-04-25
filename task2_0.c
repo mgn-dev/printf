@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <limits.h>
 
 /**
  * print_binary - function that prints and converts
@@ -10,8 +12,9 @@
 int print_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
+	unsigned int j = num;
 	char *str = NULL;
-	int i, j = num, len = 0, count = 0;
+	int i, len, count = 0;
 
 	if (num == 0)
 	{
