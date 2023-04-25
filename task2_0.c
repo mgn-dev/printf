@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <limits.h>
 
 /**
  * print_binary - function that prints and converts
@@ -23,7 +21,7 @@ int print_binary(va_list args)
 	}
 
 	for (len = 0; j > 0; len++)
-		j = j / 2;
+		j /= 2;
 
 	str = malloc(sizeof(char) * (len + 1));
 
