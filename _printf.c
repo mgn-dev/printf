@@ -27,10 +27,10 @@ int _printf(const char *format, ...)
 
 			if (result == 0) /*next char is unknown*/
 			{
-				if (format[i + 1] == '\n')
-					count += handle_char('%');
-				else if (format[i + 1] == '\0')
+				if (format[i + 1] == '\0')
 					count = -1;
+                else
+                    count += handle_char('%');
 			}
 			else
 			{	count += result;
