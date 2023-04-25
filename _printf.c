@@ -63,7 +63,8 @@ int handle_specifier(const char *format, va_list args, int index)
 	int (*fn_ptr)(va_list);
 	int count = 0;
 
-	fn_ptr = get_fmt_fn(format[index + 1]);
+	if (format[index + 1] != '\0')
+		fn_ptr = get_fmt_fn(format[index + 1]);
 
 	if (fn_ptr != NULL)
 		count = fn_ptr(args);
