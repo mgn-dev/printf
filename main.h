@@ -2,6 +2,7 @@
 #define MAIN_H
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * struct formats - a structure that contains 2 variables
@@ -22,6 +23,8 @@ int print_perc(va_list args);
 int _putchar(char c);
 int print_dec(va_list args);
 int print_int(va_list args);
+
+int print_binary(va_list args);
 
 int (*get_fmt_fn(char s))(va_list);
 
