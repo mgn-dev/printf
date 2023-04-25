@@ -25,26 +25,24 @@ int _printf(const char *format, ...)
 		{
 			result = handle_specifier(format, args, i);
 
-			if (result == 0) /*next char is unknown*/
+			if (result == 0)
 			{
-				if (format[i + 1] == '\n')
-					count += handle_char('%');
-				else if (format[i + 1] == '\0')
+				if (format[i + 1] == '\0')
 					count = -1;
+				else
+					count += handle_char('%');
 			}
 			else
-			{	count += result;
+			{
+				count += result;
 				i++;
 			}
-
 		}
 		else
 		{
 			count += handle_char(format[i]);
 		}
 	}
-
-
 
 	va_end(args);
 
@@ -62,16 +60,13 @@ int _printf(const char *format, ...)
 */
 int handle_specifier(const char *format, va_list args, int index)
 {
-	int (*fn_ptr)(va_list) = NULL;
+	int (*fn_ptr)(va_list);
 	int count = 0;
 
-	if (format[index + 1] != '\0')
-		fn_ptr = get_fmt_fn(format[index + 1]);
+	fn_ptr = get_fmt_fn(format[index + 1]);
 
 	if (fn_ptr != NULL)
-	{
 		count = fn_ptr(args);
-	}
 
 	return (count);
 }
