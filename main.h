@@ -27,6 +27,9 @@ int print_binary(va_list args);
 int print_oct(va_list args);
 int print_hex(va_list args);
 int print_HEX(va_list args);
+int print_custom_string(va_list args);
+int print_HEX_bis(unsigned int num);
+
 
 int printf_buffer(const char *str, int *length);
 
