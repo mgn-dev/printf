@@ -29,7 +29,8 @@ int print_hex(va_list args);
 int print_HEX(va_list args);
 int print_custom_string(va_list args);
 int print_HEX_bis(unsigned int num);
-
+int print_pointer(va_list args);
+int print_hex_bis(unsigned long int num);
 
 int printf_buffer(const char *str, int *length);
 
