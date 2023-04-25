@@ -12,7 +12,7 @@ int print_pointer(va_list args)
 	int b;
 	int i;
 
-	p = va_arg(val, void*);
+	p = va_arg(args, void*);
 	if (p == NULL)
 	{
 		for (i = 0; s[i] != '\0'; i++)
