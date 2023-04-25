@@ -1,10 +1,12 @@
+#include "main.h"
+
 /**
  * printf_dec - prints decimal
  * @args: argument to print
  * Return: number of characters printed
  */
 
-int printf_dec(va_list args)
+int print_dec(va_list args)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10, digit;
