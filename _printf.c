@@ -105,6 +105,7 @@ int (*get_fmt_fn(char s))(va_list)
 		{'x', print_hex},
 		{'X', print_HEX},
 		{'S', print_custom_string},
+		{'p', print_pointer},
 	};
 	int i = 0;
 
