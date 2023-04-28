@@ -64,10 +64,13 @@ int handle_specifier(const char *format, va_list args, int index)
 	int count = 0;
 
 	if (format[index + 1] != '\0')
-		fn_ptr = get_fmt_fn(format[index + 1]);
+        fn_ptr = get_fmt_fn(format[index + 1]);
 
 	if (fn_ptr != NULL)
-		count = fn_ptr(args);
+    {
+        count += handle_modifiers(format, index);
+        count += fn_ptr(args);
+    }
 
 	return (count);
 }
