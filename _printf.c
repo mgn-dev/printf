@@ -25,7 +25,10 @@ int _printf(const char *format, ...)
 		{
 			result = handle_specifier(format, args, i);
 
-			if (result == 0 && (format[i + 1] != 's' && format[i + 1] != 'r'))
+			if (result == 0 &&
+                format[i + 1] != 's' &&
+                format[i + 1] != 'r' &&
+                format[i + 1] != 'R')
 			{
 				if (format[i + 1] == '\0')
 					count = -1;
@@ -108,11 +111,12 @@ int (*get_fmt_fn(char s))(va_list)
 		{'X', print_HEX},
 		{'S', print_custom_string},
 		{'p', print_pointer},
-    {'r', print_rev}
+        {'r', print_rev},
+        {'R', print_rot13}
 	};
 	int i = 0;
 
-	while (s != ops[i].s && i < 13)
+	while (s != ops[i].s && i < 14)
 		i++;
 
 	if (s == ops[i].s)
