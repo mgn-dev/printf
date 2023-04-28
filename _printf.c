@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		{
 			result = handle_specifier(format, args, i);
 
-			if (result == 0 && format[i + 1] != 's')
+			if (result == 0 && (format[i + 1] != 's' && format[i + 1] != 'r'))
 			{
 				if (format[i + 1] == '\0')
 					count = -1;
