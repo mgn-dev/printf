@@ -32,7 +32,7 @@ int print_HEX_bis(unsigned int num);
 int print_pointer(va_list args);
 int print_hex_bis(unsigned long int num);
 
-int printf_buffer(const char *str, int *length);
+int print_rev(va_list args);
 
 int (*get_fmt_fn(char s))(va_list);
 int handle_specifier(const char *format, va_list args_copy, int index);

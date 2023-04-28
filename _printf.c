@@ -64,10 +64,12 @@ int handle_specifier(const char *format, va_list args, int index)
 	int count = 0;
 
 	if (format[index + 1] != '\0')
-		fn_ptr = get_fmt_fn(format[index + 1]);
+        fn_ptr = get_fmt_fn(format[index + 1]);
 
 	if (fn_ptr != NULL)
-		count = fn_ptr(args);
+    {
+        count += fn_ptr(args);
+    }
 
 	return (count);
 }
@@ -106,10 +108,11 @@ int (*get_fmt_fn(char s))(va_list)
 		{'X', print_HEX},
 		{'S', print_custom_string},
 		{'p', print_pointer},
+    {'r', print_rev}
 	};
 	int i = 0;
 
-	while (s != ops[i].s && i < 12)
+	while (s != ops[i].s && i < 13)
 		i++;
 
 	if (s == ops[i].s)
