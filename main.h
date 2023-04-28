@@ -33,6 +33,7 @@ int print_pointer(va_list args);
 int print_hex_bis(unsigned long int num);
 
 int print_rev(va_list args);
+int print_rot13(va_list args);
 
 int (*get_fmt_fn(char s))(va_list);
 int handle_specifier(const char *format, va_list args_copy, int index);
